@@ -5,9 +5,10 @@ app = Flask(__name__)
 
 socketio = SocketIO(app)
 
-@app.route('/chat', methods=['POST'])
+@app.route('/chat', methods=['GET'])
 def generate_chat():
-    
+    return render_template('index.html')
+
 
 if __name__ == '__main__':
     socketio.run(app,debug=True)
